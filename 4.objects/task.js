@@ -21,9 +21,7 @@ Student.prototype.addMarks = function (...marksToAdd) {
 
 
 Student.prototype.getAverage = function () {
-    if (this.marks === 0 || !this.marks) /*почему-то при условии this.marks.length === 0 всё ломалось. Не разобралась. */{ 
-        return 0
-    } else {
+    if (this.marks){
         return this.marks.reduce((acc, mark, index, marks) => {
         acc += mark;
         if (index === this.marks.length - 1){
@@ -32,6 +30,7 @@ Student.prototype.getAverage = function () {
         return acc
     }, 0)
   } 
+  return 0
 }
 
 Student.prototype.exclude = function (reason) {
