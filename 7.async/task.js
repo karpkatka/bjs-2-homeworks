@@ -23,7 +23,10 @@ class AlarmClock {
 	}
 
 	getCurrentFormattedTime() {
-		return new Date().toLocaleTimeString("ru-Ru", {hour: "2-digit", minute:"2-digit"})
+		return new Date().toLocaleTimeString("ru-Ru", {
+			hour: "2-digit",
+			minute: "2-digit"
+		});
 	}
 
 
