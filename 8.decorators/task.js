@@ -33,7 +33,7 @@ function debounceDecoratorNew(func, delay) {
 
 	function wrapper(...args) {
 		if (!timeoutID) {
-			wrapper.count += 1;
+			wrapper.count++;
 			func(args);
 		} else {
 			clearTimeout(timeoutID);
@@ -42,10 +42,10 @@ function debounceDecoratorNew(func, delay) {
 			wrapper.count += 1;
 			func(...args);
 		}, delay)
-		wrapper.allCount += 1;
+		wrapper.allCount++;
 	}
 
-	wrapper.allCount = Number();
-	wrapper.count = Number();
+	wrapper.allCount = 0;
+	wrapper.count = 0;
 	return wrapper;
 }
